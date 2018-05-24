@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="section">
+        <div class="panel panel--loose panel--bordered">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-huge text-blue base-margin-bottom">Devices</h1>
+
+                    <hr>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="form-group__text">
+                            <input id="name" ng-model="device.name">
+                            <label for="name">Name</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group__text">
+                            <input id="ip" ng-model="device.ip">
+                            <label for="ip">IP</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group__text">
+                            <input id="username" ng-model="device.username">
+                            <label for="username">Username</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group__text">
+                            <input id="password" ng-model="device.password" type="password">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group__text">
+                            <input id="port" ng-model="device.port">
+                            <label for="port">Port</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="form-group__text select">
+                            <textarea id="certificate" style="min-height:200px"
+                                      ng-model="device.certificate"></textarea>
+
+                            <label for="certificate">Certificate</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+                <div class="col-md-12" ng-show="!isUpdate">
+                    <br/>
+                    <hr/>
+                    <button class="btn btn--primary" ng-click="sendDevice()">Save</button>
+                </div>
+                <div class="col-md-12" ng-show="isUpdate">
+                    <br/>
+                    <hr/>
+                    <button class="btn btn--negative" ng-click="deleteDevice()" disabled>Delete</button>
+                    <button class="btn btn--secondary" ng-click="newDevice()">New</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="panel panel--loose panel--bordered">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-huge text-blue base-margin-bottom">Current Devices</h1>
+
+                    <hr>
+                    <div class="responsive-table">
+                        <table class="table table--bordered table--hover">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name
+                                </th>
+                                <th>IP</th>
+                                <th>Port</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr style="cursor:pointer" ng-repeat="p_device in devices" ng-click="editDevice(p_device)">
+                                <td></td>
+                                <td>{a p_device.name a}</td>
+                                <td>{a p_device.ip a}</td>
+                                <td>{a p_device.port a}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
