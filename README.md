@@ -4,11 +4,11 @@ Example of how to build a real time topology using gRPC, XR Telemetry and a very
 
 You can add devices directly from the web interface and they will be configured with the correct telemetry subscription. 
 
-![Add Device](https://github.com/sfloresk/tviewer/blob/master/doc-images/AddDevice.png)
+![Add Device](https://github.com/CiscoSE/tviewer/blob/master/doc-images/AddDevice.png)
 
 Then, you will see the devices coming up in the graph
 
-![Topology](https://github.com/sfloresk/tviewer/blob/master/doc-images/Topology.png)
+![Topology](https://github.com/CiscoSE/tviewer/blob/master/doc-images/Topology.png)
 
 It uses the ISIS adjacency and interface IP information to build the links between devices. In order to get real time information without querying all the time to the server javascript web-sockets are used. 
 The rest of the actions (e.g. get devices, add devices) are done with traditional get/post actions using angular JS
